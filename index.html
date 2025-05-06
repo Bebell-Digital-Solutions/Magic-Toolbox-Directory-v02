@@ -7,7 +7,6 @@
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
     
-    
         @property --rotate {
           syntax: '<number>';
           inherits: true;
@@ -28,15 +27,15 @@
         }
 
         :root {
-          --circle-size: 35vmin;
+          --circle-size: 28vmin;
           --spacing: 3vmin;
-          --font-size: 4.05vmin;
+          --font-size: 3.0vmin;
           --ease-speed: 50ms;
           --logo-size: 18vmin;
         }
 
         body {
-            height: 900vh;
+            height: 1080vh;
             margin: 0;
             padding: 0;
             font-family: 'Lato', sans-serif;
@@ -49,22 +48,43 @@
         }
         
         
+        .header {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom:80px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    color: #959ce8;
+}
+
+.header h1 {
+    font-size: 2.8em;
+    margin: 0;
+
+}
+
+.header p {
+    font-size: .8em;
+    margin: 0px 0 30px;
+    color: #111111;
+}
         
         .logo-container {
             position: fixed;
             left: 50%;
-            top: 50%;
+            top: 55%;
             transform: translate(-50%, -50%);
             width: var(--logo-size);
             height: var(--logo-size);
             border-radius: 50%;
-            background: transparent;
+            background: white;
             box-shadow: 0 0 20px rgba(75, 73, 152, 0.2);
             z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+
         }
 
         .logo-container:hover {
@@ -79,21 +99,19 @@
             border-radius: 50%;
             align-items: center;
             justify-content: center;
+
         }
 
         .logo-container img {
-            width: 140%;
+            width: 145%;
             height: auto;
             object-fit: contain;
         }
         
-        
-        
-
         ul {
           position: fixed;
           left: 50%;
-          top: 50%;
+          top: 55%;
           translate: -50% -50%;
           display: block;
           width: var(--circle-size);
@@ -226,87 +244,28 @@
             }
         }
         
-        /* Magnifying glass styles */
-        .magnifier {
-            position: fixed;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            border: 3px solid rgba(75, 73, 152, 0.5);
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(2px);
-            z-index: 20;
-            pointer-events: none;
-            box-shadow: 0 0 15px rgba(75, 73, 152, 0.3);
-        }
-        
-        .magnifier::before {
-            content: '';
-            position: absolute;
-            bottom: -25px;
-            right: 10px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background: rgba(75, 73, 152, 0.3);
-        }
-        
-        .magnifier::after {
-            content: '';
-            position: absolute;
-            bottom: -40px;
-            right: 25px;
-            width: 3px;
-            height: 30px;
-            background: rgba(75, 73, 152, 0.5);
-            transform: rotate(45deg);
-            transform-origin: bottom;
-        }
-        
-        /* Highlight effect for text under magnifier */
-        li.highlighted span {
+        /* Simplified highlight effect */
+        li.highlighted a {
             color: #2a276b;
             font-weight: bold;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-        }
-        
-        /* Arrow indicator alternative (hidden by default) */
-        .arrow-indicator {
-            position: fixed;
-            right: 10%;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
-            z-index: 20;
-            pointer-events: none;
-            display: none;
-        }
-        
-        .arrow-indicator::before {
-            content: '→';
-            font-size: 40px;
-            color: rgba(75, 73, 152, 0.7);
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
         }
     </style>
 </head>
 <body>
+
+<div class="header">
+    <h1>Directorio:</h1>
+    <p>Soluciones Digitales para tus Necesidades Empresariables</p>
+</div>
     
-      <div class="logo-container">
+    <div class="logo-container">
         <a href="https://magictoolbox.net" aria-label="Magic Toolbox Home">
-            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/2295a45e3e48af1e3ac4370f511271b5d510d825.png" alt="Magic Toolbox Logo">
+            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/890b5882f9ae6ee3aebd232eab05b0023faa8ba1.png" alt="Magic Toolbox Logo">
         </a>
     </div>
     
     <ul>
-        <li><a href="https://magictoolbox.net/todos"><span>T</span><span>o</span><span>d</span><span>o</span><span>s</span> </a></li>
+        
         <li><a href="https://magictoolbox.net/organizacion"><span>O</span><span>r</span><span>g</span><span>a</span><span>n</span><span>i</span><span>z</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span></a></li>
         <li><a href="https://magictoolbox.net/productividad"><span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>v</span><span>i</span><span>d</span><span>a</span><span>d</span></a></li>
         <li><a href="https://magictoolbox.net/automatizacion"><span>A</span><span>u</span><span>t</span><span>o</span><span>m</span><span>a</span><span>t</span><span>i</span><span>z</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span></a></li>
@@ -329,43 +288,35 @@
         <li><a href="https://magictoolbox.net/creacion-ia"><span>C</span><span>r</span><span>e</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span> <span>c</span><span>o</span><span>n</span> <span>I</span><span>A</span></a></li>
         <li><a href="https://magictoolbox.net/herramientas-freelancer"><span>H</span><span>e</span><span>r</span><span>r</span><span>a</span><span>m</span><span>i</span><span>e</span><span>n</span><span>t</span><span>a</span><span>s</span> <span>F</span><span>r</span><span>e</span><span>e</span><span>l</span><span>a</span><span>n</span><span>c</span><span>e</span><span>r</span></a></li>
         <li><a href="https://magictoolbox.net/formularios-reservas"><span>F</span><span>o</span><span>r</span><span>m</span><span>u</span><span>l</span><span>a</span><span>r</span><span>i</span><span>o</span><span>s</span> <span>y</span> <span>R</span><span>e</span><span>s</span><span>e</span><span>r</span><span>v</span><span>a</span><span>s</span></a></li>
+        <li><a href="https://magictoolbox.net/todos"><span>T</span><span>o</span><span>d</span><span>o</span><span>s</span> </a></li>
     </ul>
-
-    <div class="magnifier"></div>
-    <div class="arrow-indicator"></div>
 
     <em>Tu navegador no soporta las últimas características de scroll ☹️</em>
     
     <script>
-        // Highlight text under magnifier
-        function highlightTextUnderMagnifier() {
-            const magnifier = document.querySelector('.magnifier');
-            const magnifierRect = magnifier.getBoundingClientRect();
-            const magnifierCenter = {
-                x: magnifierRect.left + magnifierRect.width / 2,
-                y: magnifierRect.top + magnifierRect.height / 2
-            };
+        // Function to highlight text in focus position (right side)
+        function highlightFocusedText() {
+            const viewportCenterX = window.innerWidth * 0.75; // Focus area at 75% of viewport width (right side)
+            const viewportCenterY = window.innerHeight / 2;
             
             // Reset all highlights
             document.querySelectorAll('li').forEach(li => {
                 li.classList.remove('highlighted');
             });
             
-            // Find which li is closest to the magnifier center
+            // Find which li is closest to the focus position
             let closestLi = null;
             let minDistance = Infinity;
             
             document.querySelectorAll('li').forEach(li => {
                 const liRect = li.getBoundingClientRect();
-                const liCenter = {
-                    x: liRect.left + liRect.width / 2,
-                    y: liRect.top + liRect.height / 2
-                };
+                const liCenterX = liRect.left + liRect.width / 2;
+                const liCenterY = liRect.top + liRect.height / 2;
                 
-                // Calculate distance between magnifier center and li center
+                // Calculate distance from focus position
                 const distance = Math.sqrt(
-                    Math.pow(magnifierCenter.x - liCenter.x, 2) + 
-                    Math.pow(magnifierCenter.y - liCenter.y, 2)
+                    Math.pow(viewportCenterX - liCenterX, 2) + 
+                    Math.pow(viewportCenterY - liCenterY, 2)
                 );
                 
                 if (distance < minDistance) {
@@ -375,17 +326,17 @@
             });
             
             // Highlight the closest li
-            if (closestLi && minDistance < 150) { // 150px is a threshold
+            if (closestLi && minDistance < 200) { // 200px is a reasonable threshold
                 closestLi.classList.add('highlighted');
             }
         }
         
         // Run the function on scroll and resize
-        window.addEventListener('scroll', highlightTextUnderMagnifier);
-        window.addEventListener('resize', highlightTextUnderMagnifier);
+        window.addEventListener('scroll', highlightFocusedText);
+        window.addEventListener('resize', highlightFocusedText);
         
         // Initial highlight check
-        highlightTextUnderMagnifier();
+        highlightFocusedText();
     </script>
 </body>
 </html>
