@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Toolbox - Herramientas Digitales</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    
+    
+        @property --rotate {
+          syntax: '<number>';
+          inherits: true;
+          initial-value: 0;
+        }
+
+        @property --delayed-rotate {
+          syntax: '<number>';
+          inherits: true;
+          initial-value: 0;
+        }
+
+        @keyframes scrollAnim {
+            to {
+                --rotate: 1;
+                --delayed-rotate: 1;
+            }
+        }
+
+        :root {
+          --circle-size: 35vmin;
+          --spacing: 3vmin;
+          --font-size: 4.05vmin;
+          --ease-speed: 50ms;
+          --logo-size: 18vmin;
+        }
+
+        body {
+            height: 900vh;
+            margin: 0;
+            padding: 0;
+            font-family: 'Lato', sans-serif;
+            font-size: var(--font-size);
+            font-weight: 500;
+            background-color: #f2f1fb;
+            color: #4b4998;
+            animation: scrollAnim linear;
+            animation-timeline: scroll(nearest block);
+        }
+        
+        
+        
+        .logo-container {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--logo-size);
+            height: var(--logo-size);
+            border-radius: 50%;
+            background: transparent;
+            box-shadow: 0 0 20px rgba(75, 73, 152, 0.2);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 0 25px rgba(75, 73, 152, 0.3);
+        }
+
+        .logo-container a {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container img {
+            width: 140%;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        
+        
+
+        ul {
+          position: fixed;
+          left: 50%;
+          top: 50%;
+          translate: -50% -50%;
+          display: block;
+          width: var(--circle-size);
+          height: var(--circle-size);
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          border-radius: 50%;
+          transform: rotate(calc(var(--rotate) * 360deg));
+        }
+
+        li {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          line-height: 0;
+          transform-origin: 0 0;
+          text-wrap: nowrap;
+        }
+
+        li:nth-child(1) { rotate: 0deg; }
+        li:nth-child(2) { rotate: 15.65deg; }
+        li:nth-child(3) { rotate: 31.3deg; }
+        li:nth-child(4) { rotate: 46.95deg; }
+        li:nth-child(5) { rotate: 62.6deg; }
+        li:nth-child(6) { rotate: 78.26deg; }
+        li:nth-child(7) { rotate: 93.91deg; }
+        li:nth-child(8) { rotate: 109.56deg; }
+        li:nth-child(9) { rotate: 125.21deg; }
+        li:nth-child(10) { rotate: 140.86deg; }
+        li:nth-child(11) { rotate: 156.52deg; }
+        li:nth-child(12) { rotate: 172.17deg; }
+        li:nth-child(13) { rotate: 187.82deg; }
+        li:nth-child(14) { rotate: 203.47deg; }
+        li:nth-child(15) { rotate: 219.13deg; }
+        li:nth-child(16) { rotate: 234.78deg; }
+        li:nth-child(17) { rotate: 250.43deg; }
+        li:nth-child(18) { rotate: 266.08deg; }
+        li:nth-child(19) { rotate: 281.73deg; }
+        li:nth-child(20) { rotate: 297.39deg; }
+        li:nth-child(21) { rotate: 313.04deg; }
+        li:nth-child(22) { rotate: 328.69deg; }
+        li:nth-child(23) { rotate: 344.34deg; }
+
+        li a {
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        li a:hover {
+            color: #2a276b;
+            text-shadow: 0 0 5px rgba(42, 39, 107, 0.2);
+        }
+
+        li span {
+          --rotate-velocity: calc(var(--rotate) - var(--delayed-rotate));
+          --rotate-spacing: calc(var(--spacing) * -4 * var(--rotate-velocity));
+          --x: calc(var(--circle-size) / 2 + var(--rotate-spacing));
+          --y: calc(10px * var(--rotate-velocity));
+          --r: calc(90deg * var(--rotate-velocity));
+
+          display: inline-block;
+          transform: translate(var(--x), var(--y)) rotate(var(--r, 0deg));
+        }
+
+        li span:nth-child(1) {
+            --y: calc((1 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 0) ease-out;
+        }
+        li span:nth-child(2) {
+            --y: calc((2 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 1) ease-out;
+        }
+        li span:nth-child(3) {
+            --y: calc((3 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 2) ease-out;
+        }
+        li span:nth-child(4) {
+            --y: calc((4 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 3) ease-out;
+        }
+        li span:nth-child(5) {
+            --y: calc((5 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 4) ease-out;
+        }
+        li span:nth-child(6) {
+            --y: calc((6 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 5) ease-out;
+        }
+        li span:nth-child(7) {
+            --y: calc((7 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 6) ease-out;
+        }
+        li span:nth-child(8) {
+            --y: calc((8 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 7) ease-out;
+        }
+        li span:nth-child(9) {
+            --y: calc((9 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 8) ease-out;
+        }
+        li span:nth-child(10) {
+            --y: calc((10 * -20px) * var(--rotate-velocity));
+            transform-origin: var(--x) 0;
+            transition: --delayed-rotate calc(var(--ease-speed, 100ms) * 9) ease-out;
+        }
+
+        em {
+          display: block;
+          margin: 4px;
+          text-align: center;
+          font-style: normal;
+          font-size: small;
+        }
+
+        @supports (animation-timeline: scroll()) {
+            em {
+                display: none;
+            }
+        }
+        
+        /* Magnifying glass styles */
+        .magnifier {
+            position: fixed;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid rgba(75, 73, 152, 0.5);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(2px);
+            z-index: 20;
+            pointer-events: none;
+            box-shadow: 0 0 15px rgba(75, 73, 152, 0.3);
+        }
+        
+        .magnifier::before {
+            content: '';
+            position: absolute;
+            bottom: -25px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(75, 73, 152, 0.3);
+        }
+        
+        .magnifier::after {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            right: 25px;
+            width: 3px;
+            height: 30px;
+            background: rgba(75, 73, 152, 0.5);
+            transform: rotate(45deg);
+            transform-origin: bottom;
+        }
+        
+        /* Highlight effect for text under magnifier */
+        li.highlighted span {
+            color: #2a276b;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Arrow indicator alternative (hidden by default) */
+        .arrow-indicator {
+            position: fixed;
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            z-index: 20;
+            pointer-events: none;
+            display: none;
+        }
+        
+        .arrow-indicator::before {
+            content: '→';
+            font-size: 40px;
+            color: rgba(75, 73, 152, 0.7);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    
+      <div class="logo-container">
+        <a href="https://magictoolbox.net" aria-label="Magic Toolbox Home">
+            <img src="https://bucket.mlcdn.com/a/3336/3336910/images/2295a45e3e48af1e3ac4370f511271b5d510d825.png" alt="Magic Toolbox Logo">
+        </a>
+    </div>
+    
+    <ul>
+        <li><a href="https://magictoolbox.net/todos"><span>T</span><span>o</span><span>d</span><span>o</span><span>s</span> </a></li>
+        <li><a href="https://magictoolbox.net/organizacion"><span>O</span><span>r</span><span>g</span><span>a</span><span>n</span><span>i</span><span>z</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span></a></li>
+        <li><a href="https://magictoolbox.net/productividad"><span>P</span><span>r</span><span>o</span><span>d</span><span>u</span><span>c</span><span>t</span><span>i</span><span>v</span><span>i</span><span>d</span><span>a</span><span>d</span></a></li>
+        <li><a href="https://magictoolbox.net/automatizacion"><span>A</span><span>u</span><span>t</span><span>o</span><span>m</span><span>a</span><span>t</span><span>i</span><span>z</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span></a></li>
+        <li><a href="https://magictoolbox.net/administracion"><span>A</span><span>d</span><span>m</span><span>i</span><span>n</span><span>i</span><span>s</span><span>t</span><span>r</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span></a></li>
+        <li><a href="https://magictoolbox.net/investigacion-data"><span>I</span><span>n</span><span>v</span><span>e</span><span>s</span><span>t</span><span>i</span><span>g</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span> <span>y</span> <span>D</span><span>a</span><span>t</span><span>a</span></a></li>
+        <li><a href="https://magictoolbox.net/gestion-proyectos"><span>G</span><span>e</span><span>s</span><span>t</span><span>i</span><span>ó</span><span>n</span> <span>d</span><span>e</span> <span>P</span><span>r</span><span>o</span><span>y</span><span>e</span><span>c</span><span>t</span><span>o</span><span>s</span></a></li>
+        <li><a href="https://magictoolbox.net/comunicacion"><span>C</span><span>o</span><span>m</span><span>u</span><span>n</span><span>i</span><span>c</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span></a></li>
+        <li><a href="https://magictoolbox.net/colaboracion"><span>C</span><span>o</span><span>l</span><span>a</span><span>b</span><span>o</span><span>r</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span></a></li>
+        <li><a href="https://magictoolbox.net/diseno-grafico"><span>D</span><span>i</span><span>s</span><span>e</span><span>ñ</span><span>o</span> <span>G</span><span>r</span><span>á</span><span>f</span><span>i</span><span>c</span><span>o</span></a></li>
+        <li><a href="https://magictoolbox.net/audio-video"><span>A</span><span>u</span><span>d</span><span>i</span><span>o</span> <span>y</span> <span>V</span><span>i</span><span>d</span><span>e</span><span>o</span></a></li>
+        <li><a href="https://magictoolbox.net/redaccion-copywriting"><span>R</span><span>e</span><span>d</span><span>a</span><span>c</span><span>c</span><span>i</span><span>ó</span><span>n</span> <span>y</span> <span>C</span><span>o</span><span>p</span><span>y</span><span>w</span><span>r</span><span>i</span><span>t</span><span>i</span><span>n</span><span>g</span></a></li>
+        <li><a href="https://magictoolbox.net/seo-analitica"><span>S</span><span>E</span><span>O</span> <span>y</span> <span>A</span><span>n</span><span>a</span><span>l</span><span>í</span><span>t</span><span>i</span><span>c</span><span>a</span></a></li>
+        <li><a href="https://magictoolbox.net/publicidad"><span>P</span><span>u</span><span>b</span><span>l</span><span>i</span><span>c</span><span>i</span><span>d</span><span>a</span><span>d</span></a></li>
+        <li><a href="https://magictoolbox.net/redes-sociales"><span>R</span><span>e</span><span>d</span><span>e</span><span>s</span> <span>S</span><span>o</span><span>c</span><span>i</span><span>a</span><span>l</span><span>e</span><span>s</span></a></li>
+        <li><a href="https://magictoolbox.net/email-marketing-newsletters"><span>E</span><span>m</span><span>a</span><span>i</span><span>l</span> <span>M</span><span>a</span><span>r</span><span>k</span><span>e</span><span>t</span><span>i</span><span>n</span><span>g</span> <span>y</span> <span>N</span><span>e</span><span>w</span><span>s</span><span>l</span><span>e</span><span>t</span><span>t</span><span>e</span><span>r</span><span>s</span></a></li>
+        <li><a href="https://magictoolbox.net/ventas-crm"><span>V</span><span>e</span><span>n</span><span>t</span><span>a</span><span>s</span> <span>y</span> <span>C</span><span>R</span><span>M</span></a></li>
+        <li><a href="https://magictoolbox.net/ecommerce"><span>E</span><span>c</span><span>o</span><span>m</span><span>m</span><span>e</span><span>r</span><span>c</span><span>e</span></a></li>
+        <li><a href="https://magictoolbox.net/finanzas"><span>F</span><span>i</span><span>n</span><span>a</span><span>n</span><span>z</span><span>a</span><span>s</span></a></li>
+        <li><a href="https://magictoolbox.net/proteccion-seguridad"><span>P</span><span>r</span><span>o</span><span>t</span><span>e</span><span>c</span><span>c</span><span>i</span><span>ó</span><span>n</span> <span>y</span> <span>S</span><span>e</span><span>g</span><span>u</span><span>r</span><span>i</span><span>d</span><span>a</span><span>d</span></a></li>
+        <li><a href="https://magictoolbox.net/creacion-ia"><span>C</span><span>r</span><span>e</span><span>a</span><span>c</span><span>i</span><span>ó</span><span>n</span> <span>c</span><span>o</span><span>n</span> <span>I</span><span>A</span></a></li>
+        <li><a href="https://magictoolbox.net/herramientas-freelancer"><span>H</span><span>e</span><span>r</span><span>r</span><span>a</span><span>m</span><span>i</span><span>e</span><span>n</span><span>t</span><span>a</span><span>s</span> <span>F</span><span>r</span><span>e</span><span>e</span><span>l</span><span>a</span><span>n</span><span>c</span><span>e</span><span>r</span></a></li>
+        <li><a href="https://magictoolbox.net/formularios-reservas"><span>F</span><span>o</span><span>r</span><span>m</span><span>u</span><span>l</span><span>a</span><span>r</span><span>i</span><span>o</span><span>s</span> <span>y</span> <span>R</span><span>e</span><span>s</span><span>e</span><span>r</span><span>v</span><span>a</span><span>s</span></a></li>
+    </ul>
+
+    <div class="magnifier"></div>
+    <div class="arrow-indicator"></div>
+
+    <em>Tu navegador no soporta las últimas características de scroll ☹️</em>
+    
+    <script>
+        // Highlight text under magnifier
+        function highlightTextUnderMagnifier() {
+            const magnifier = document.querySelector('.magnifier');
+            const magnifierRect = magnifier.getBoundingClientRect();
+            const magnifierCenter = {
+                x: magnifierRect.left + magnifierRect.width / 2,
+                y: magnifierRect.top + magnifierRect.height / 2
+            };
+            
+            // Reset all highlights
+            document.querySelectorAll('li').forEach(li => {
+                li.classList.remove('highlighted');
+            });
+            
+            // Find which li is closest to the magnifier center
+            let closestLi = null;
+            let minDistance = Infinity;
+            
+            document.querySelectorAll('li').forEach(li => {
+                const liRect = li.getBoundingClientRect();
+                const liCenter = {
+                    x: liRect.left + liRect.width / 2,
+                    y: liRect.top + liRect.height / 2
+                };
+                
+                // Calculate distance between magnifier center and li center
+                const distance = Math.sqrt(
+                    Math.pow(magnifierCenter.x - liCenter.x, 2) + 
+                    Math.pow(magnifierCenter.y - liCenter.y, 2)
+                );
+                
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestLi = li;
+                }
+            });
+            
+            // Highlight the closest li
+            if (closestLi && minDistance < 150) { // 150px is a threshold
+                closestLi.classList.add('highlighted');
+            }
+        }
+        
+        // Run the function on scroll and resize
+        window.addEventListener('scroll', highlightTextUnderMagnifier);
+        window.addEventListener('resize', highlightTextUnderMagnifier);
+        
+        // Initial highlight check
+        highlightTextUnderMagnifier();
+    </script>
+</body>
+</html>
